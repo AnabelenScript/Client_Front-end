@@ -1,0 +1,123 @@
+.desserts {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 60px;
+  }
+  
+  .table-desserts {
+    width: 80%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-desserts thead {
+    background: linear-gradient(to right, #2b92f3, #095eba);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .table-desserts th, .table-desserts td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table-desserts tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .table-desserts tbody tr:hover {
+    background: rgba(126, 126, 126, 0.1);
+  }
+  
+  .table-desserts tbody tr:nth-child(even) {
+    background: #d6e4ff;
+  }
+  
+  .table-desserts td:last-child {
+    text-align: center;
+  }
+  
+  .table-desserts button {
+    background: #006adb;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+  }
+  .modal-content button{
+    background: #006adb;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background: #5e83ff;
+  }
+  
+  button:last-child {
+    background: #006adb;
+  }
+  
+  button:last-child:hover {
+    background: #91b0ff;
+  }
+  
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .add-edit-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  input{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  
