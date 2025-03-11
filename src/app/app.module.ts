@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 import { DessertsModule } from './components/desserts/desserts.module';
+import { UsersModule } from './components/users/users.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +15,8 @@ import { DessertsModule } from './components/desserts/desserts.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    DessertsModule
+    DessertsModule,
+    UsersModule
 ],
   providers: [
     provideClientHydration(),
