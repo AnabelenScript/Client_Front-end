@@ -4,6 +4,7 @@ import { DessertsDashboardComponent } from './desserts-dashboard/desserts-dashbo
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DessertCreateComponent } from './dessert-create/dessert-create.component';
+import { UsersModule } from '../users/users.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DessertCreateComponent } from './dessert-create/dessert-create.componen
     CommonModule,
     HttpClientModule,
     FormsModule,
-    CurrencyPipe
+    CurrencyPipe,
+    UsersModule
   ],
   exports:[
     DessertsDashboardComponent,

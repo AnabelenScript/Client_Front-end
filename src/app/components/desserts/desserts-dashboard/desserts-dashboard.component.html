@@ -18,7 +18,7 @@
       <td>{{ dessert.Quantity }}</td>
       <td>{{ dessert.Price }}</td>
       <td>
-        <button (click)="openEditModal(dessert)">Editar</button>
+        <button (click)="openEditModal(dessert)" *ngIf="isAdmin">Editar</button>
         <button (click)="deleteDessert(dessert.Id!)">Eliminar</button>
       </td>
     </tr>

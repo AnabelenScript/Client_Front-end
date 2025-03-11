@@ -5,7 +5,7 @@ import { DessertsDashboardComponent } from './components/desserts/desserts-dashb
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
-  {path: '', component: DessertsDashboardComponent}
+  {path: 'desserts', component: DessertsDashboardComponent}
 ];
 
 @NgModule({

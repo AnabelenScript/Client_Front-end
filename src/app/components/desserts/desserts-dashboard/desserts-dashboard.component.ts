@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Dessert from "../../../models/Dessert_Interface";
 import { DessertService } from '../../../services/dessert_service';
+import { LoginComponent } from '../../users/login/login.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-desserts-dashboard',
@@ -11,13 +13,19 @@ export class DessertsDashboardComponent implements OnInit {
   Desserts: Dessert[] = [];
   selectedDessert: Dessert = {} as Dessert;
   isModalOpen: boolean = false;
+  isAdmin: boolean = false;
 
-  constructor(private dessertService: DessertService) { }
+  constructor(
+    private dessertService: DessertService,
+    private loginComponent: LoginComponent,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
     this.dessertService.getAllDesserts().subscribe((data: Dessert[]) => {
       this.Desserts = data;
     });
+    this.isAdmin = this.loginComponent.isAdmin
   }
 
   openEditModal(dessert: Dessert): void {
