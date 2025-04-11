@@ -1,0 +1,27 @@
+
+<div class="login-box">
+    <p>Register</p>
+    <form (ngSubmit)="registerUser()" #loginForm="ngForm">
+        <div class="user-box">
+            <input required name="name" type="text" [(ngModel)]="registerData.name">
+            <label>Name</label>
+          </div>
+        <div class="user-box">
+          <input required name="email" type="text" [(ngModel)]="registerData.email">
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input required name="password" type="password" [(ngModel)]="registerData.password">
+          <label>Password</label>
+        </div>
+      
+        <button type="submit" class="submit-button">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </button>
+      </form>
+      <p class="registerlink">Do you have an account? <a routerLink="/">Login</a></p>  
+  </div>

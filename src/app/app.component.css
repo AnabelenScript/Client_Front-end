@@ -1,0 +1,32 @@
+
+.body-background {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(-45deg, #84fab0, #8fd3f4, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: aguaMovimiento 20s ease infinite;
+  }
+  
+  .blur-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+    mix-blend-mode: lighten;
+  }
+  
+  /* Animación suave como flujo de agua */
+  @keyframes aguaMovimiento {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

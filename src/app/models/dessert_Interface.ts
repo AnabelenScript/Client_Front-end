@@ -1,4 +1,4 @@
-export default interface Desssert {
+export default interface Dessert {
     Id?: number; 
     Name: string;
     Flavor: string;

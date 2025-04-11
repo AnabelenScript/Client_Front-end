@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import Dessert from "../models/Dessert_Interface";
+import Dessert from "../models/dessert_Interface";
 
 @Injectable({
   providedIn: 'root'

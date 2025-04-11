@@ -1,0 +1,18 @@
+<div class="pedido-modal" *ngIf="isVisible">
+    <h2>Crear Pedido</h2>
+    <label>Cantidad:
+      <input type="number" [(ngModel)]="quantity" min="1" [max]="dessert.Quantity" />
+    </label>
+    <p>Total: ${{ total }}</p>
+    
+    <h3>Pago con tarjeta</h3>
+    <div class="form">
+    <input type="text" placeholder="Número de tarjeta" />
+    <input type="text" placeholder="MM/YY" />
+    <input type="text" placeholder="CVV" />
+  
+    <button (click)="createOrder()"><span class="box">
+       Crear pedido
+    </span></button></div>
+  </div>
+  

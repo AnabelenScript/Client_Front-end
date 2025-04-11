@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Dessert from "../../../models/Dessert_Interface";
+import Dessert from "../../../models/dessert_Interface";
 import { DessertService } from '../../../services/dessert_service';
-import { LoginComponent } from '../../users/login/login.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +16,6 @@ export class DessertsDashboardComponent implements OnInit {
 
   constructor(
     private dessertService: DessertService,
-    private loginComponent: LoginComponent,
     private router : Router
   ) { }
 
@@ -25,7 +23,6 @@ export class DessertsDashboardComponent implements OnInit {
     this.dessertService.getAllDesserts().subscribe((data: Dessert[]) => {
       this.Desserts = data;
     });
-    this.isAdmin = this.loginComponent.isAdmin
   }
 
   openEditModal(dessert: Dessert): void {

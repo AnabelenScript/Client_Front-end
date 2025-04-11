@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsersService } from '../../../services/users_service';
 import User from '../../../models/users_interface';
 import { Router } from '@angular/router';
@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  isAdmin: boolean = false; 
+export class LoginComponent {
+  loginData = { email: '', password: '' };
+  isAdmin: boolean = false;
   currentUser: User | null = null;
 
   constructor(
@@ -17,37 +18,31 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    if (typeof localStorage !== 'undefined') {
-      const storedUser = localStorage.getItem('currentUser');
-      if (storedUser) {
-        this.currentUser = JSON.parse(storedUser);
-  
-        if (this.currentUser) {
-          this.isAdmin = this.currentUser.User_type === 1;
-          console.log(`Sesión activa: ${this.currentUser.Name} (${this.isAdmin ? 'Administrador' : 'Usuario Normal'})`);
-          this.router.navigate(['/desserts']);
-        }
-      }
-    }
-  }
-  
+  loginUser(): void {
+    this.usersService.login(this.loginData).subscribe({
+      next: (res) => {
+        const user: User = {
+          id: res.user.id,
+          name: res.user.name,
+          email: res.user.email,
+          user_type: res.user.user_type || 0,
+        };
 
-  getUsers(): void {
-    this.usersService.getAllUsers().subscribe((users: User[]) => {
-      console.log(users)
-      const currentUser = users.find(user => user.ID === 1);
-      if (currentUser) {
-        this.isAdmin = currentUser.User_type === 1;
-        this.currentUser = currentUser;
-        localStorage.setItem('currentUser', JSON.stringify(currentUser));
-        console.log(`El usuario ${currentUser.Name} es ${this.isAdmin ? 'Administrador' : 'Usuario Normal'}`);
-        this.router.navigate(['/desserts']);
-      } else {
-        console.error('Usuario no encontrado.');
+        this.currentUser = user;
+        this.isAdmin = user.user_type === 1;
+        localStorage.setItem('loggedUser', JSON.stringify(user));
+
+        console.log(`Bienvenido ${user.name} (${this.isAdmin ? 'Admin' : 'Cliente'})`);
+        if (this.isAdmin) {
+          this.router.navigate(['/desserts-table']); 
+        } else {
+          this.router.navigate(['/desserts-menu']);
+        }
+      },
+      error: (err) => {
+        console.error('Error de login:', err);
+        alert('Credenciales inválidas');
       }
-    }, error => {
-      console.error('Error al obtener los usuarios:', error);
     });
   }
 }

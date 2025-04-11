@@ -1,0 +1,21 @@
+<div 
+  class="modal-overlay" 
+  *ngIf="dessert" 
+  (click)="closeModal()">
+</div>
+
+<div class="modal-box" *ngIf="dessert">
+  <img src="postre.jpg" alt="" class="dessert-image">
+  <h2>{{ dessert.Name }}</h2>
+  <p><strong>Sabor:</strong> {{ dessert.Flavor }}</p>
+  <p><strong>Precio:</strong> ${{ dessert.Price }}</p>
+  <p><strong>Stock:</strong> {{ dessert.Quantity }}</p>
+  <div class="buttons">
+  <button (click)="openPedido()"><span class="box">
+    Hacer pedido
+ </span></button>
+  <button (click)="closeModal()"><span class="box">
+    Cerrar
+ </span></button></div>
+</div>
+<app-create-pedido *ngIf="dessert" [dessert]="dessert"></app-create-pedido>

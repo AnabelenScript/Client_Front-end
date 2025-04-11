@@ -1,0 +1,14 @@
+<div class="menu">
+<div class="dessert-container">
+    <div *ngFor="let dessert of desserts" class="dessert-card" (click)="openDessertModal(dessert)">
+      <div class="dessert-info">
+        <img src="postre.jpg" alt="Imagen de postre" />
+        <h3>{{ dessert.Name }}</h3>
+        <p>{{ dessert.Flavor }}</p>
+        <p><strong>Precio:</strong> ${{ dessert.Price }}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <app-dessert-info></app-dessert-info>
+  

@@ -1,5 +1,5 @@
 import { Component,  EventEmitter, Output } from '@angular/core';
-import Dessert from '../../../models/Dessert_Interface';
+import Dessert from '../../../models/dessert_Interface';
 import { DessertService } from '../../../services/dessert_service';
 
 @Component({

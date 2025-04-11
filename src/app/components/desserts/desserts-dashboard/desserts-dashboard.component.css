@@ -1,123 +1,148 @@
 .desserts {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 60px;
-  }
-  
-  .table-desserts {
-    width: 80%;
-    max-width: 1000px;
-    border-collapse: collapse;
-    font-family: "Poppins", sans-serif;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .table-desserts thead {
-    background: linear-gradient(to right, #2b92f3, #095eba);
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .table-desserts th, .table-desserts td {
-    padding: 12px 15px;
-    text-align: left;
-  }
-  
-  .table-desserts tbody tr {
-    border-bottom: 1px solid #ddd;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .table-desserts tbody tr:hover {
-    background: rgba(126, 126, 126, 0.1);
-  }
-  
-  .table-desserts tbody tr:nth-child(even) {
-    background: #d6e4ff;
-  }
-  
-  .table-desserts td:last-child {
-    text-align: center;
-  }
-  
-  .table-desserts button {
-    background: #006adb;
-    border: none;
-    color: white;
-    padding: 8px 12px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-weight: bold;
-  }
-  .modal-content button{
-    background: #006adb;
-    border: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background: #5e83ff;
-  }
-  
-  button:last-child {
-    background: #006adb;
-  }
-  
-  button:last-child:hover {
-    background: #91b0ff;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f8faff;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.table-desserts {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.table-desserts thead {
+  background: linear-gradient(to right, #ca42f4, #b637ff);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.table-desserts th, .table-desserts td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.table-desserts tbody tr {
+  transition: background 0.3s;
+  border-bottom: 1px solid #eee;
+}
+
+.table-desserts tbody tr:nth-child(even) {
+  background-color: #f3f6ff;
+}
+
+.table-desserts tbody tr:hover {
+  background-color: #e4ebff;
+}
+
+.table-desserts td:last-child {
+  text-align: center;
+}
+
+.table-desserts button {
+  background: #d129ff;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+.table-desserts button:hover {
+  background: #be18ff;
+}
+
 .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    position: relative;
-    max-width: 500px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
 
-  .add-edit-modal{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
 
-  input{
-    width: 100%;
-    margin-bottom: 10px;
-  }
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
 
-  
+.modal-content form div {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.2s;
+}
+
+.modal-content input:focus {
+  border-color: #ca42f4;
+  outline: none;
+}
+
+.modal-content button[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+  background: #b41ab9;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.modal-content button[type="submit"]:hover {
+  background: #b618ff;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.add-edit-modal {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1100px;
+}

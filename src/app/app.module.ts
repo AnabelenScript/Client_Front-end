@@ -7,16 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 import { DessertsModule } from './components/desserts/desserts.module';
 import { UsersModule } from './components/users/users.module';
+import { PedidosModule } from './components/pedidos/pedidos.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     DessertsModule,
-    UsersModule
+    UsersModule,
+    PedidosModule
 ],
   providers: [
     provideClientHydration(),
